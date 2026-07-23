@@ -1,0 +1,7 @@
+*CMakeCache.txt
+build/
+*.ipynb_checkpoints/
+example/.ipynb_checkpoints/
+*/__pycache__/*
+examples/output_with_solvent.pdb
+examples/NVT_REAX.pdb
