@@ -1,6 +1,8 @@
 # OpenMM ReaxFF Plugin
 
-This repository provides an OpenMM plugin for ReaxFF-based force fields. It exposes a ReaxFF force implementation within the OpenMM ecosystem and integrates the underlying ReaxFF PuReMD code through the bundled PureMD/sPuReMD implementation in [3rdParty/sPuReMD](3rdParty/sPuReMD).
+ReaxFF enables highly accurate reactive molecular dynamics, but running it natively inside OpenMM is not possible yet.
+
+This repository provides an OpenMM plugin for ReaxFF-based force fields. It exposes a ReaxFF Force class within OpenMM, bridging OpenMM's C++ architecture to the underlying functional C API of the ReaxFF PuReMD engine [3rdParty/sPuReMD](3rdParty/sPuReMD), the application layer API is then exposed using SWIG. This makes reactive simulations as easy to integrate into Python workflows as standard AMBER or CHARMM force fields.
 
 ## What this plugin provides
 
