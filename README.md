@@ -64,6 +64,11 @@ The force engine used by this plugin is based on the bundled ReaxFF-PuReMD imple
 
 The plugin includes parallelization-related directives and the underlying ReaxFF implementation is also compatible with MPI-based execution strategies. This makes it suitable for larger-scale simulations, keeping the passes between OpenMM and PuReMD smooth and fast.
 
+## Class structure
+The blow image contains the UML diagram of the Plugin. The classes needed OpenMM OpenMM communicate through the PuremdInterface class with the ReaxFF implementation, which is a purely functional C implementation.
+
+![img/image.png](img/image.png)
+
 ## Python usage
 
 Once installed, the Python wrapper is available for use with OpenMM just like any other custom force. In practice, the plugin is used by importing the OpenMM ReaxFF functionality and constructing a ReaxFF force object for the system of interest.
@@ -83,3 +88,5 @@ To avoid that, the example does three things:
 The helper in [examples/utils/ReaxFFHelpers.py](examples/utils/ReaxFFHelpers.py) implements this. It keeps bonded terms that belong only to the surrounding MM region, while removing those that touch the ReaxFF atoms. This preserves the environment around the reactive region without letting the classical force field compete with ReaxFF for the same bonds, angles, torsions, or nonbonded interactions.
 
 The same idea is applied to constraints as well: any constraints involving ReaxFF atoms are removed so that the ReaxFF region is not simultaneously constrained by two different models.
+
+

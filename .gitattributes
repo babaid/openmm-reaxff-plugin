@@ -1,2 +1,2 @@
-3rdParty/sPuReMD/*linguist-vendored
-3rdParty/* linguist-vendored
+3rdParty/sPuReMD/** linguist-vendored=true
+3rdParty/** linguist-vendored
